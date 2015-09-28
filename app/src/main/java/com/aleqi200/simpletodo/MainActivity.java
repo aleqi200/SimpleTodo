@@ -5,7 +5,6 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -76,7 +75,7 @@ public class MainActivity extends Activity implements Constants {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == SUCCESS) {
-            String newValue = data.getExtras().getString(ITEM_VAVLUE);
+            String newValue = data.getExtras().getString(ITEM_VALUE);
             int position = data.getExtras().getInt(POSITION);
             items.set(position, newValue);
             itemsAdapter.notifyDataSetChanged();
@@ -101,7 +100,7 @@ public class MainActivity extends Activity implements Constants {
 
                 getWindow().setExitTransition(new Explode());
                 Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
-                intent.putExtra(ITEM_VAVLUE, itemValue);
+                intent.putExtra(ITEM_VALUE, itemValue);
                 intent.putExtra(POSITION, position);
                 startActivityForResult(intent, SUCCESS, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 

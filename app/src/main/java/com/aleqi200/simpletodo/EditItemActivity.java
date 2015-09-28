@@ -1,7 +1,6 @@
 package com.aleqi200.simpletodo;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,8 +22,8 @@ public class EditItemActivity extends Activity implements Constants {
     }
 
     private void setValueFromIntent(Intent intent) {
-        editValue = intent.getStringExtra(ITEM_VAVLUE);
-        position = intent.getIntExtra(ITEM_VAVLUE, 0);
+        editValue = intent.getStringExtra(ITEM_VALUE);
+        position = intent.getIntExtra(POSITION, position);
         EditText etNewItem = (EditText) findViewById(R.id.etValue);
         etNewItem.setText(editValue);
 
@@ -56,7 +55,7 @@ public class EditItemActivity extends Activity implements Constants {
         EditText etNewItem = (EditText) findViewById(R.id.etValue);
         String newValue = etNewItem.getText().toString().trim();
         Intent intent = new Intent();
-        intent.putExtra(ITEM_VAVLUE, newValue);
+        intent.putExtra(ITEM_VALUE, newValue);
         intent.putExtra(POSITION, position);
         setResult(RESULT_OK, intent);
         finish();

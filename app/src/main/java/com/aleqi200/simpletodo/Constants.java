@@ -5,6 +5,6 @@ package com.aleqi200.simpletodo;
  */
 public interface Constants {
     int SUCCESS = 200;
-    String ITEM_VAVLUE = "itemValue";
+    String ITEM_VALUE = "itemValue";
     String POSITION = "position";
 }
