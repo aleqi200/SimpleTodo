@@ -3,7 +3,7 @@ Todo Application Android test
 
 ###### Adding a new Item
 
-![alt tag](new_item.gif)
+![alt tag](add_item.gif)
 
 ###### Updating an Item
 
